@@ -14,6 +14,7 @@ class App extends Component {
 
     return (
       <main className="app">
+        <Navigation />
         <p>útfæra</p>
       </main>
     );

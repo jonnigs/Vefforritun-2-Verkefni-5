@@ -9,9 +9,14 @@ export default class Navigation extends Component {
 
   render() {
     return (
-      <nav className="navigation">
-        <p>útfæra</p>
-      </nav>
+      <div>
+        <strong><h1>Próftöflur</h1></strong>
+        <nav className="navigation">
+          <li>this.state.svid[4]</li>
+          <li>Menntavísindasvið</li>
+          <li>Menntavísindasvið</li>
+        </nav>
+      </div>
     );
   }
 }
