@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 import './App.css';
 
@@ -13,10 +13,13 @@ class App extends Component {
   render() {
 
     return (
-      <main className="app">
-        <Navigation />
-        <p>útfæra</p>
-      </main>
+      <Router>
+        <main className="app">
+          <Navigation />
+          <Route exact path="/" component={Home} />
+          <Route path="/:schools" component={School} />
+        </main>
+      </Router>
     );
   }
 }

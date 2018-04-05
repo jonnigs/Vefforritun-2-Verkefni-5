@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 import './School.css';
 
@@ -11,11 +12,44 @@ import './School.css';
 
 export default class School extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      school: "",
+      departments: [],
+      tests: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://vefforritun2-2018-v4-synilausn.herokuapp.com/' + this.props.match.params.schools)
+    .then(results => {
+      return results.json();
+    }).then(data => {
+      let departments = data.school.departments.map((dep) => {
+        return(
+          <button onClick={this.handleClick}>+ {dep.heading}</button>
+        )
+      })
+      this.setState({school: data.school.heading});
+      this.setState({departments: departments});
+    });
+    return 1;
+  }
+
+  handleClick() {
+    console.log('dep');
+  }
+
   render() {
 
     return (
       <section className="school">
-        <p>útfæra</p>
+        <h1>{this.state.school}</h1>
+        <div>
+          {this.state.departments}
+        </div>
+        <Link to="/">Heim</Link>
       </section>
     );
   }
