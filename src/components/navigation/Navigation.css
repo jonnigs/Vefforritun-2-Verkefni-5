@@ -1,1 +1,26 @@
 /* útfæra */
+.nav {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 2em;
+}
+
+strong {
+  text-align: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: space-around;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

@@ -1,1 +1,8 @@
 /* útfæra */
+h1 {
+  margin: 1em 0;
+}
+
+p {
+  border-bottom: 1px solid #000;
+}

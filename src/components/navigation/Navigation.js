@@ -31,7 +31,7 @@ export default class Navigation extends Component {
 
   render() {
     return (
-      <div>
+      <div className="nav">
         <strong><h1>Próftöflur</h1></strong>
         <nav className="navigation">
           <ul>

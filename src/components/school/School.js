@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import './School.css';
 
@@ -26,19 +26,44 @@ export default class School extends Component {
     .then(results => {
       return results.json();
     }).then(data => {
-      let departments = data.school.departments.map((dep) => {
-        return(
-          <button onClick={this.handleClick}>+ {dep.heading}</button>
-        )
-      })
-      this.setState({school: data.school.heading});
-      this.setState({departments: departments});
+      if (data.error === "Not found") {
+        this.setState({departments: <Redirect to="/notfound"/>})
+      } else {
+        let departments = data.school.departments.map((dep) => {
+          return(
+            <p onClick={() => this.handleClick(dep)}>+ {dep.heading}</p>
+          )
+        })
+        this.setState({school: data.school.heading});
+        this.setState({departments: departments});
+
+      }
     });
     return 1;
   }
 
-  handleClick() {
-    console.log('dep');
+  handleClick(dep) {
+    let tests = dep.tests.map((tes) => {
+      return(
+        <tr>
+          <td>{tes.course}</td>
+          <td>{tes.name}</td>
+          <td>{tes.students}</td>
+          <td>{tes.date}</td>
+        </tr>
+      )
+    })
+
+    function tafla() {
+      return(
+        <table>
+          <tbody>
+            {tests}
+          </tbody>
+        </table>
+      )
+    }
+    this.setState({tests: tafla()});
   }
 
   render() {
@@ -48,6 +73,7 @@ export default class School extends Component {
         <h1>{this.state.school}</h1>
         <div>
           {this.state.departments}
+          {this.state.tests}
         </div>
         <Link to="/">Heim</Link>
       </section>
