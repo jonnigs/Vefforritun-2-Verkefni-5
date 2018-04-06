@@ -8,6 +8,10 @@ p.svid {
   padding: 1em 0;
 }
 
+p.svid:hover {
+  cursor: pointer;
+}
+
 p.svid:last-child {
   margin-bottom: 1em;
 
