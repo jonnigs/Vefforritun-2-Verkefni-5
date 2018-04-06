@@ -10,15 +10,19 @@ import Navigation from './components/navigation';
 import NotFound from './components/not-found';
 
 class App extends Component {
+
   render() {
 
     return (
       <Router>
         <main className="app">
+          <Helmet>
+            <title>Próftöflur</title>
+          </Helmet>
           <Navigation />
           <Route exact path="/" component={Home} />
           <Route path="/notfound" component={NotFound} />
-          <Route path="/:schools" component={School} />
+          <Route exact path="/:schools" component={School} />
         </main>
       </Router>
     );
