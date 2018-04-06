@@ -30,11 +30,21 @@ export default class Home extends Component {
       <div className="home">
         <h2>Tölfræði</h2>
         <div>
-        <strong><p>Fjöldi prófa</p></strong> <p>{this.state.stats.numTests}</p>
-        <strong><p>Fjöldi nemenda í öllum prófum</p></strong> <p>{this.state.stats.numStudents}</p>
-        <strong><p>Meðalfjöldi nemenda í prófi</p></strong> <p>{this.state.stats.averageStudents}</p>
-        <strong><p>Minnsti fjöldi nemenda í prófi</p></strong> <p>{this.state.stats.min}</p>
-        <strong><p>Mesti fjöldi nemenda í prófi</p></strong> <p>{this.state.stats.max}</p>
+          <div className="stats">
+            <strong><p>Fjöldi prófa</p></strong> <p>{this.state.stats.numTests}</p>
+          </div>
+          <div className="stats">
+            <strong><p>Fjöldi nemenda í öllum prófum</p></strong> <p>{this.state.stats.numStudents}</p>
+          </div>
+          <div className="stats">
+            <strong><p>Meðalfjöldi nemenda í prófi</p></strong> <p>{this.state.stats.averageStudents}</p>
+          </div>
+          <div className="stats">
+            <strong><p>Minnsti fjöldi nemenda í prófi</p></strong> <p>{this.state.stats.min}</p>
+          </div>
+          <div className="stats">
+            <strong><p>Mesti fjöldi nemenda í prófi</p></strong> <p>{this.state.stats.max}</p>
+          </div>
         </div>
       </div>
     );

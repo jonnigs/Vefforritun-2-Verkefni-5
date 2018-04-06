@@ -31,7 +31,7 @@ export default class School extends Component {
       } else {
         let departments = data.school.departments.map((dep) => {
           return(
-            <p onClick={() => this.handleClick(dep)}>+ {dep.heading}</p>
+            <p className="svid" onClick={() => this.handleClick(dep)}>+ {dep.heading}</p>
           )
         })
         this.setState({school: data.school.heading});
@@ -58,6 +58,12 @@ export default class School extends Component {
       return(
         <table>
           <tbody>
+            <tr>
+              <th>Auðkenni</th>
+              <th>Námskeið</th>
+              <th>Fjöldi</th>
+              <th>Dagsetning</th>
+            </tr>
             {tests}
           </tbody>
         </table>

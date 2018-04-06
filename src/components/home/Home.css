@@ -1,1 +1,11 @@
 /* útfæra */
+h2 {
+  padding: 1em 0;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  padding: 0.5em 0;
+}
